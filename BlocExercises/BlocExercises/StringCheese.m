@@ -19,6 +19,7 @@
     /* WORK HERE */
     NSRange cheeseInName = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
     if (cheeseInName.location == NSNotFound) {
+//        Added section to check if cheese is in name, and if not to output input string
         return cheeseName;
     }
     NSString *cheeseNameWithoutCheeseSuffix = [cheeseName stringByReplacingCharactersInRange:cheeseInName withString:@""];
