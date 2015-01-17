@@ -11,7 +11,16 @@
 @implementation StarTrekArrays
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
-    /* WORK HERE */
+//    /* WORK HERE */
+//    NSMutableArray *arrayOfStarTrekCharactersFromString = [];
+//    NSInteger *characterStringItemCount = ;
+//    for (NSInteger five = 5; five > 1; five--) {
+//        fiveFactorial = fiveFactorial * five;
+//        NSLog(@"five is now: %ld", (long)five);
+//    }
+//    for (NSString *characterString in someArrayOfNumbers) {
+//        <#statements#>
+//    }
     return @[];
 }
 
