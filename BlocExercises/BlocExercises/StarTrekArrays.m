@@ -12,31 +12,32 @@
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
 //    /* WORK HERE */
-//    NSMutableArray *arrayOfStarTrekCharactersFromString = [];
-//    NSInteger *characterStringItemCount = ;
-//    for (NSInteger five = 5; five > 1; five--) {
-//        fiveFactorial = fiveFactorial * five;
-//        NSLog(@"five is now: %ld", (long)five);
-//    }
-//    for (NSString *characterString in someArrayOfNumbers) {
-//        <#statements#>
-//    }
-    return @[];
-}
+    NSArray *unMutableArrayOfStarTrekCharactersFromString = [characterString componentsSeparatedByString:@";"];
+    NSMutableArray *arrayOfStarTrekCharactersFromString = [unMutableArrayOfStarTrekCharactersFromString mutableCopy];
+        return arrayOfStarTrekCharactersFromString;
+    }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
     /* WORK HERE */
-    return @"";
+    NSMutableArray *mutableArrayOfStarTrekCharactersFromArray = [characterArray mutableCopy];
+    NSString *stringOfStarTrekCharactersFromArray = [mutableArrayOfStarTrekCharactersFromArray componentsJoinedByString:@";"];
+    NSString *stringForOutput = [NSString stringWithFormat:@"%@", stringOfStarTrekCharactersFromArray];
+    return stringForOutput;
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @[];
+    NSMutableArray *mutableArrayOfStarTrekCharacters = [characterArray mutableCopy];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    [mutableArrayOfStarTrekCharacters sortUsingDescriptors:@[sortDescriptor]];
+    return mutableArrayOfStarTrekCharacters;
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     /* WORK HERE */
-    return NO;
+    NSMutableArray *mutableCharacterArrayContainsWorf = [characterArray mutableCopy];
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
+    [mutableCharacterArrayContainsWorf filterUsingPredicate:containsWorf];
+    return mutableCharacterArrayContainsWorf;
 }
 
 @end
