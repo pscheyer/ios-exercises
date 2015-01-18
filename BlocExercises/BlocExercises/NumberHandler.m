@@ -12,17 +12,42 @@
 
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
     /* WORK HERE */
-    return @0;
+    
+    int intDoubleNumber = [number intValue] * 2;
+    NSNumber *doubleNumber = [NSNumber numberWithInt:intDoubleNumber];
+    return doubleNumber;
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @[];
+    NSInteger smaller = (number <= otherNumber) ? number : otherNumber;
+    NSInteger larger = (otherNumber >= number) ? otherNumber: number;
+    NSNumber *numberInWrapper = [NSNumber numberWithLong:number];
+    NSMutableArray *outputArray = [[NSMutableArray alloc] init];
+    [outputArray addObject:numberInWrapper];
+    if (number == otherNumber) {
+        //        return first.
+        NSNumber *objectNumber = [NSNumber numberWithLong:number];
+        [outputArray addObject:objectNumber];
+    } else
+        while (smaller < larger) {
+            smaller = smaller + 1;
+            NSNumber *smallerForArray = [NSNumber numberWithLong:smaller];
+            [outputArray addObject:smallerForArray];
+        }
+    NSArray *immutArrayForOutput = outputArray;
+   return immutArrayForOutput;
 }
+
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
     /* WORK HERE */
-    return 0;
+    NSMutableArray *mutLowestNumInArray = [arrayOfNumbers mutableCopy];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES];
+    [mutLowestNumInArray sortUsingDescriptors:@[sortDescriptor]];
+    NSNumber *lowestNumber = [mutLowestNumInArray firstObject];
+    NSInteger returnNumber = [lowestNumber integerValue];
+    return returnNumber;
 }
 
 @end
