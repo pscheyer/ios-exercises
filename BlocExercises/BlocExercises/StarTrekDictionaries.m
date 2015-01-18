@@ -12,7 +12,10 @@
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    return @"";
+//    NSMutableDictionary *favDrinkDictMutable= [characterDictionary mutableCopy];
+//    NSString *favDrinkString = [characterDictionary[@"favorite drink"] string];
+//    NSString *stringForOutput = [NSString stringWithFormat:@"%@", favDrinkString];
+    return [characterDictionary[@"favorite drink"] string];
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
