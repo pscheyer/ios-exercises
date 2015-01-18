@@ -37,7 +37,11 @@
     NSMutableArray *mutableCharacterArrayContainsWorf = [characterArray mutableCopy];
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
     [mutableCharacterArrayContainsWorf filterUsingPredicate:containsWorf];
-    return mutableCharacterArrayContainsWorf;
+    if ([mutableCharacterArrayContainsWorf isEqualToArray: @[]]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 @end

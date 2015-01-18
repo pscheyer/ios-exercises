@@ -12,10 +12,14 @@
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
     /* WORK HERE */
+    NSMutableArray *remembererArray = [[NSMutableArray alloc] initWithArray:arrayToRemember];
+    self.arrayYouShouldRemember = remembererArray;
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
     /* WORK HERE */
+    NSMutableArray *remembererArray = [[NSMutableArray alloc] initWithArray:arrayToCopy];
+    self.arrayYouShouldRemember = remembererArray;
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
