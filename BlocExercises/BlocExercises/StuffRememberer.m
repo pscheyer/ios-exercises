@@ -12,32 +12,33 @@
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
     /* WORK HERE */
-    self.arrayYouShouldRemember = arrayToRemember;
+    NSMutableArray *remembererArray = [[NSMutableArray alloc] initWithArray:arrayToRemember];
+    self.arrayYouShouldRemember = remembererArray;
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
     /* WORK HERE */
-    self.remembererArray = [[NSMutableArray alloc] initWithArray:arrayToCopy];
+    NSMutableArray *remembererArray = [[NSMutableArray alloc] initWithArray:arrayToCopy];
+    self.arrayYouShouldRemember = remembererArray;
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
     /* WORK HERE */
-    self.floatToRemember = floatToRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldRemember {
     /* WORK HERE */
-    return _arrayYouShouldRemember;
+    return [@[] mutableCopy];
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {
     /* WORK HERE */
-    return _remembererArray;
+    return [@[] mutableCopy];
 }
 
 - (CGFloat) floatYouShouldRemember {
     /* WORK HERE */
-    return _floatToRemember;
+    return 0.0f;
 }
 
 @end
