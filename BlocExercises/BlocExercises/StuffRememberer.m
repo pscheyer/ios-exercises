@@ -7,6 +7,10 @@
 //
 
 #import "StuffRememberer.h"
+@interface StuffRememberer()
+@property (nonatomic, strong) NSMutableArray *arrayYouShouldRemember;
+@property (assign) NSNumber *floatToRemember;
+@end
 
 @implementation StuffRememberer
 
